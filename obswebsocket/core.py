@@ -169,13 +169,13 @@ class obsws:
 
         eventSubscriptions = 1023 # EventSubscription::All
         if input_volume_meters:
-            eventSubscriptions = eventSubscriptions << 16
+            eventSubscriptions = eventSubscriptions | 1 << 16
         if input_active_state_changed:
-            eventSubscriptions = eventSubscriptions << 17
+            eventSubscriptions = eventSubscriptions | 1 << 17
         if input_show_state_changed:
-            eventSubscriptions = eventSubscriptions << 18
+            eventSubscriptions = eventSubscriptions | 1 << 18
         if scene_item_transform_changed:
-            eventSubscriptions = eventSubscriptions << 19
+            eventSubscriptions = eventSubscriptions | 1 << 19
 
         payload = {
             "op": 1,
